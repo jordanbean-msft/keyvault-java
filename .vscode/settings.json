@@ -1,0 +1,10 @@
+{
+  "azureFunctions.javaBuildTool": "maven",
+  "azureFunctions.deploySubpath": "src/java",
+  "azureFunctions.projectLanguage": "Java",
+  "azureFunctions.projectRuntime": "~4",
+  "debug.internalConsoleOptions": "neverOpen",
+  "azureFunctions.preDeployTask": "package (functions)",
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "azureFunctions.projectSubpath": "src\\java\\target\\azure-functions\\func-RotateKeyVaultSecret-keyVaultJava-ussc-dev"
+}
