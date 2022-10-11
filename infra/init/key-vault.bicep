@@ -24,6 +24,7 @@ resource keyVault 'Microsoft.KeyVault/vaults@2021-10-01' = {
           secrets: [
             'get'
             'list'
+            'set'
           ]
         }
         objectId: managedIdentity.properties.principalId
@@ -33,6 +34,7 @@ resource keyVault 'Microsoft.KeyVault/vaults@2021-10-01' = {
         permissions: {
           secrets: [
             'all'
+            'purge'
           ]
         }
         objectId: aadUserObjectId

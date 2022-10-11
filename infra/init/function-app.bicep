@@ -81,34 +81,18 @@ resource rotateKeyVaultSecretFunctionApp 'Microsoft.Web/sites@2021-01-15' = {
           name: 'KEY_VAULT_URI'
           value: keyVault.properties.vaultUri
         }
+        {
+          name: 'NUMBER_OF_DAYS_UNTIL_EXPIRY'
+          value: '365'
+        }
+        {
+          name: 'MANAGED_IDENTITY_CLIENT_ID'
+          value: userAssignedManagedIdentity.properties.clientId
+        }
       ]
     }
   }
 }
-
-// resource rotateKeyVaultSecretFunctionEndpoint 'Microsoft.Web/sites/functions@2020-12-01' = {
-//   name: '${rotateKeyVaultSecretFunctionApp.name}/${rotateKeyVaultSecretFunctionEndpointName}'
-//   properties: {
-//     config: {
-//       bindings: [
-//         {
-//           authLevel: 'function'
-//           name: 'req'
-//           type: 'httpTrigger'
-//           direction: 'in'
-//           methods: [
-//             'post'
-//           ]
-//         }
-//         {
-//           name: 'res'
-//           type: 'http'
-//           direction: 'out'
-//         }
-//       ]
-//     }
-//   }
-// }
 
 resource logAnalyticsWorkspace 'Microsoft.OperationalInsights/workspaces@2021-06-01' existing = {
   name: logAnalyticsWorkspaceName
